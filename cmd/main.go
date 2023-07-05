@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"net/http"
+	"net/http/cookiejar"
 	"os"
 	"os/exec"
 
+	"github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
 	_ "github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
 )
 
@@ -36,6 +39,58 @@ func InitGoClient() error {
 
 }
 
+func RunInteractive() {
+
+	var in_raw_query string
+
+	var err error
+
+	jar, err := cookiejar.New(nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	client := &http.Client{
+		Jar: jar,
+	}
+
+	err = goclient.ClientAuthChallenge(client)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println("help: available queries")
+	fmt.Println("exit: exit")
+
+	for {
+
+		fmt.Println("query: ")
+
+		fmt.Scanln(&in_raw_query)
+
+		switch in_raw_query {
+
+		case "help":
+
+			goclient.ASgi_CliRef.PrintPrettyDefinition()
+
+		case "exit":
+
+			return
+
+		default:
+
+			goclient.CommunicationHandler_LinearInstruction_PrintOnly(client, in_raw_query)
+
+		}
+
+	}
+
+}
+
 func main() {
 
 	err := InitGoClient()
@@ -46,6 +101,5 @@ func main() {
 		return
 	}
 
-	// interactive cmd
-
+	RunInteractive()
 }
