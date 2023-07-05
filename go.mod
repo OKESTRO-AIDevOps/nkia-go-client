@@ -1,3 +1,3 @@
-module github.com/OKESTRO-AIDevOps/npia-cmd
+module github.com/OKESTRO-AIDevOps/npia-go-client
 
 go 1.20
