@@ -1,11 +1,9 @@
 package main
 
-import (
-	"github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
-)
+// "github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
 
 func main() {
 
-	goclient.LoadConfigYaml_Test()
+	//goclient.LoadConfigYaml_Test()
 
 }

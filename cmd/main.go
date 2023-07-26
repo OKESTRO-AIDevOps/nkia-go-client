@@ -11,6 +11,8 @@ import (
 	_ "github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
 )
 
+var mode = goclient.CONFIG_YAML["MODE"]
+
 func InitGoClient() error {
 
 	cmd := exec.Command("mkdir", "-p", "srv")
@@ -101,5 +103,12 @@ func main() {
 		return
 	}
 
-	RunInteractive()
+	if mode == "test" {
+		goclient.BaseFlow_APIThenMultiMode_Test()
+	} else if mode == "release" {
+		RunInteractive()
+	} else {
+		fmt.Println("wrong mode")
+	}
+
 }
