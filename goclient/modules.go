@@ -9,9 +9,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/OKESTRO-AIDevOps/npia-api/pkg/apistandard"
-	"github.com/OKESTRO-AIDevOps/npia-server/src/controller"
-	"github.com/OKESTRO-AIDevOps/npia-server/src/modules"
+	"github.com/OKESTRO-AIDevOps/nkia/pkg/apistandard"
+	"github.com/OKESTRO-AIDevOps/nkia/src/controller"
+	"github.com/OKESTRO-AIDevOps/nkia/src/modules"
 	goya "github.com/goccy/go-yaml"
 )
 
