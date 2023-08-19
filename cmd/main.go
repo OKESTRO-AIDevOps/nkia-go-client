@@ -7,8 +7,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
-	_ "github.com/OKESTRO-AIDevOps/npia-go-client/goclient"
+	"github.com/OKESTRO-AIDevOps/nkia/cmd/goclient"
+	_ "github.com/OKESTRO-AIDevOps/nkia/cmd/goclient"
 )
 
 var mode = goclient.CONFIG_YAML["MODE"]

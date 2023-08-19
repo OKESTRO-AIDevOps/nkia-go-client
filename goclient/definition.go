@@ -3,7 +3,7 @@ package goclient
 import (
 	"os"
 
-	"github.com/OKESTRO-AIDevOps/npia-api/pkg/apistandard"
+	"github.com/OKESTRO-AIDevOps/nkia/pkg/apistandard"
 	goya "github.com/goccy/go-yaml"
 )
 
